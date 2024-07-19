@@ -2,7 +2,7 @@
 
 **足记**是一款专为高校学生设计的社区平台，旨在通过引导用户探索校园内外的美丽风景和丰富历史，发现和分享每一个值得记录的瞬间。
 
-通过**跨平台**开发技术**Flutter**实现，无论是iOS、Android还是Web用户，都能轻松访问，享受一致的优秀体验。
+通过**跨平台**开发技术**Flutter**实现，无论是Windows、Android还是Web用户，都能轻松访问，享受一致的优秀体验。
 
 ### **主要功能**
 
@@ -22,6 +22,86 @@
 
 •**容器化部署**：采用Docker容器技术进行部署，保证了在不同环境下的一致性运行，同时简化了部署流程。
 
-### **总结**
+### **安装教程**
+
+**1.  使用web端：**
+
+使用环境要求：一个有基本访问功能的浏览器
+
+使用过程：打开网址**http://foot.episode.pics/#/** **即可使用足记**
+
+**2.  使用Android端：**
+
+打开足记的推广落地页**https://app.episode.pics/** 
+
+**pc页面展示如下：**
+
+﻿
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714318993q57Nk-pQ15vT_-FpwTYy-jDKvXTL7X.png)
+
+﻿﻿
+
+
+
+**Android页面展示如下：**
+
+﻿
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714319023VBSMPMBX0Aib95oFEKR7lUuG6HUkxE.jpg)
+
+﻿﻿
+
+
+
+**点击Android apk并进行下载与安装即可**
+
+**典型使用流程：**
+
+**1.  注册并登录账号：**
+
+﻿
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714319080qerPTVZeq_2eSkg-P29a5Q0eA9EKI7.jpg)
+
+﻿            
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=202405893517143191080HJbCGzvvdgpv8uzFBQfjlVv8yhGr1.jpg)
+
+﻿
+
+﻿
+
+
+
+**2.  查看动态话题页面**
+
+﻿
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714319150SskRiMb1en59aDwnTxIaiWrO_ev1K2.jpg)
+
+﻿           
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714319151IiM3dw30YcVVDb2OuZkj69LhDbu-pP.jpg)
+
+﻿
+
+​            
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=20240589351714319151Lb4BjU5dcyImITtBFcGbMkIcUEtlbI.jpg)
+
+﻿
+
+﻿
+
+
+
+**3.  发表图文动态**
+
+﻿
+
+![img](https://2024.jsjds.com.cn/Backend/Work/work/download-article-picture?name=202405893517143192198mVQAfZt5IeDaVopshbvhGI033ToLL.jpg)
+
+### ﻿﻿**总结**
 
 **足记**以其独特的校园导航、动态共享和社区交流功能，为高校学生提供了一个全新的校园生活体验。不仅仅是一个工具应用，更是一个记录和分享美好校园生活的平台。无论是追寻校园的历史脚步，还是分享自己的生活点滴，足记都能助你一臂之力。
