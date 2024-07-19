@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_quill_extensions/flutter_quill_extensions.dart';
 import 'package:get/get.dart';
-import 'package:universal_html/html.dart' as html;
+// import 'package:universal_html/html.dart' as html;
 import 'responsive_widget.dart';
 import 'fake_ui.dart' if (dart.library.html) 'real_ui.dart' as ui_instance;
 
@@ -54,8 +54,8 @@ class ImageEmbedBuilderWeb implements EmbedBuilder {
       },
     ));
     final size = MediaQuery.of(context).size;
-    UniversalUI().platformViewRegistry.registerViewFactory(
-        imageUrl, (viewId) => html.ImageElement()..src = imageUrl);
+    // UniversalUI().platformViewRegistry.registerViewFactory(
+    //     imageUrl, (viewId) => html.ImageElement()..src = imageUrl);
     return Obx(() {
       var showWidth = size.width;
       var showHeight = showWidth * height() / width();
@@ -86,13 +86,13 @@ class VideoEmbedBuilderWeb implements EmbedBuilder {
       bool readOnly) {
     var videoUrl = node.value.data;
 
-    UniversalUI().platformViewRegistry.registerViewFactory(
-        videoUrl,
-        (id) => html.IFrameElement()
-          ..width = MediaQuery.of(context).size.width.toString()
-          ..height = MediaQuery.of(context).size.height.toString()
-          ..src = videoUrl
-          ..style.border = 'none');
+    // UniversalUI().platformViewRegistry.registerViewFactory(
+    //     videoUrl,
+    //     (id) => html.IFrameElement()
+    //       ..width = MediaQuery.of(context).size.width.toString()
+    //       ..height = MediaQuery.of(context).size.height.toString()
+    //       ..src = videoUrl
+    //       ..style.border = 'none');
 
     return SizedBox(
       height: 500,

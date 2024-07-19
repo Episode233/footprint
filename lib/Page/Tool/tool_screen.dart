@@ -26,6 +26,15 @@ class ToolScreenPage extends StatelessWidget {
         'icon': Icons.widgets_rounded,
         'introduce': '在桌面添加一个显示今日课表的小组件。在使用小组件前需要在这里先粘贴用户token',
         'canUsePlatform': [CanUsePlatform.mobile]
+      },
+      {
+        'link': 'ocr',
+        // 'link': '/tool/demo',
+        'name': 'OCR 识别',
+        'author': 'episode',
+        'icon': Icons.g_translate_rounded,
+        'introduce': '基于OCR识别技术，实时识别场景中的英文，并将其翻译为中文',
+        'canUsePlatform': [CanUsePlatform.android]
       }
     ];
     List<Widget> toolList = [];

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vcommunity_flutter/constants.dart';
+import 'package:vcommunity_flutter/util/AndroidIntentLauncher.dart';
 
 enum CanUsePlatform {
   mobile,
   desktop,
   web,
+  android,
 }
 
 class SelectiveCardWidget extends StatelessWidget {
@@ -34,6 +36,11 @@ class SelectiveCardWidget extends StatelessWidget {
       }
       if (i == CanUsePlatform.desktop) {
         canUseIcons.add(Icon(Icons.desktop_windows_rounded,
+            size: Theme.of(context).textTheme.bodyMedium!.fontSize,
+            color: Theme.of(context).colorScheme.secondary));
+      }
+      if (i == CanUsePlatform.android) {
+        canUseIcons.add(Icon(Icons.android,
             size: Theme.of(context).textTheme.bodyMedium!.fontSize,
             color: Theme.of(context).colorScheme.secondary));
       }
@@ -120,6 +127,11 @@ class SelectiveCardWidget extends StatelessWidget {
         Get.toNamed(link);
       } else if (i == CanUsePlatform.desktop && GetPlatform.isDesktop) {
         Get.toNamed(link);
+      } else if (i == CanUsePlatform.android && GetPlatform.isAndroid) {
+        // Get.toNamed(link);
+        if (link == "ocr"){
+          AndroidIntentLauncher.launchActivity('.OCRActivity');
+        }
       } else {
         Get.snackbar('提示', '这个功能不适用于你的设备');
       }
