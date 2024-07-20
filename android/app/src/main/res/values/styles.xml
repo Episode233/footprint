@@ -26,5 +26,7 @@
         <item name="android:windowAnimationStyle">@color/transparent</item>
         <item name="windowNoTitle">true</item>
     </style>
+    
+    <style name="AppTheme" parent="Theme.AppCompat.Light"/>
 
 </resources>

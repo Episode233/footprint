@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:convert';
 
 import 'package:flutter_map/flutter_map.dart'; // Suitable for most situations
 import 'package:flutter_map/plugin_api.dart'; // Only import if required functionality is not exposed by default
@@ -21,6 +22,7 @@ import 'package:vcommunity_flutter/util/user_state_util.dart';
 import '../../../Model/blog.dart';
 import '../../../Model/buildingType.dart';
 import '../../../Model/buildingType.dart';
+import 'package:vcommunity_flutter/util/native_method_channel.dart';
 
 class MapWidget extends StatefulWidget {
   MapWidget({this.useMap = true, super.key});
@@ -197,6 +199,7 @@ class _MapWidgetState extends State<MapWidget> {
         ApiResponse.fromJson(response.body, ((json) => BlogList.fromJson(json)))
             .data
             .blogs;
+    NativeMethodChannel.blogList = jsonEncode(response.body['data']);
     List<Marker> blogList = [];
     int index = 0;
     for (var i in blogs) {
