@@ -12,11 +12,23 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    
+    <!-- Both "AR Optional" and "AR Required" apps require CAMERA permission. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Sceneform requires OpenGL ES 3.0 or later. -->
+    <uses-feature android:glEsVersion="0x00030000" android:required="true" />
+    <!-- Indicates that app requires ARCore ("AR Required"). Ensures the app is
+         visible only in the Google Play Store on devices that support ARCore.
+         For "AR Optional" apps remove this line. -->
+    <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
+    
     <application
             android:label="足记"
             android:name="${applicationName}"
             android:networkSecurityConfig="@xml/network_security_config"
-            android:icon="@mipmap/ic_launcher">
+            android:icon="@mipmap/ic_launcher"
+            android:largeHeap="true">
+
         <activity
                 android:name=".MainActivity"
                 android:exported="true"
@@ -41,12 +53,14 @@
                 <action android:name="es.antonborri.home_widget.action.LAUNCH" />
             </intent-filter>
         </activity>
+
         <activity
                 android:theme="@style/NoActionBar"
                 android:screenOrientation="portrait"
                 android:name=".tesseract4android.sample.OCRActivity"
                 android:exported="true">
         </activity>
+
         <receiver android:name="ScheduleWidgetProvider"
                   android:exported="true">
             <intent-filter>
@@ -71,5 +85,17 @@
         <meta-data
                 android:name="flutterEmbedding"
                 android:value="2" />
+                
+        <!-- Indicates that app requires ARCore ("AR Required"). Causes the Google
+         Play Store to download and install Google Play Services for AR along
+         with the app. For an "AR Optional" app, specify "optional" instead of
+         "required".
+        -->
+        <meta-data android:name="com.google.ar.core" android:value="required" />
+
+        <activity android:name=".ar.SolarActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+    
     </application>
+
 </manifest>
