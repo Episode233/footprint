@@ -28,11 +28,11 @@
 
 使用环境要求：一个有基本访问功能的浏览器
 
-使用过程：打开网址**http://foot.episode.pics/#/** **即可使用足记**
+使用过程：打开网址**http://foot.episode.moe/#/** **即可使用足记**
 
 **2.  使用Android端：**
 
-打开足记的推广落地页**https://app.episode.pics/** 
+打开足记的推广落地页**https://app.episode.moe/** 
 
 **pc页面展示如下：**
 
