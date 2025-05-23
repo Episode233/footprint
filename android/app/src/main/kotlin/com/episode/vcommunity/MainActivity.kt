@@ -5,6 +5,7 @@ import com.episode.vcommunity.tesseract4android.sample.OCRActivity
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import com.episode.vcommunity.ar.SolarActivity
 
 
 class MainActivity: FlutterActivity() {
@@ -23,6 +24,15 @@ class MainActivity: FlutterActivity() {
                     result.notImplemented()
                 }
             }
+            
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "NativeMethodChannel")
+            .setMethodCallHandler { call, result ->
+            if (call.method == "showAugmentedReality") {
+                SolarActivity.startActivity(context, call.arguments<String>() as String)
+            } else {
+                result.notImplemented()
+            }
+        }
     }
-}
 
+}

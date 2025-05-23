@@ -53,10 +53,14 @@ android {
         applicationId "com.episode.vcommunity"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
     }
 //    signingConfigs {
 //        release {
@@ -68,8 +72,9 @@ android {
 //    }
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
     }
@@ -86,6 +91,14 @@ repositories{
 dependencies {
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation 'com.google.code.gson:gson:2.11.0'
+
+    implementation "com.google.ar.sceneform:core:1.15.0"
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+    implementation 'com.google.ar.sceneform:assets:1.15.0'
+    implementation 'com.google.ar:core:1.29.0'
+
+    implementation 'com.squareup.picasso:picasso:2.8'
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
@@ -116,3 +129,12 @@ dependencies {
     implementation 'com.lzy.net:okrx2:2.0.2'
 
 }
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+sceneform.asset(
+    'sampledata/line_transparent.gltf',
+    'default',
+    'sampledata/line_transparent.sfa',
+    'src/main/assets/line_transparent',
+)

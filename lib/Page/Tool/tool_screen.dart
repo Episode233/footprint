@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vcommunity_flutter/components/selective_card.dart';
 import 'package:vcommunity_flutter/constants.dart';
+import 'package:vcommunity_flutter/util/native_method_channel.dart';
 
 class ToolScreenPage extends StatelessWidget {
   const ToolScreenPage({super.key});
@@ -88,7 +89,34 @@ class ToolScreenPage extends StatelessWidget {
             const SizedBox(
               height: defaultPadding,
             ),
-            ...toolList
+            ...toolList,
+            GestureDetector(
+              onTap: () async => NativeMethodChannel.showAugmentedReality(),
+              child: Card(
+                margin: const EdgeInsets.only(top: defaultPadding),
+                elevation: 0,
+                color: Theme.of(context).colorScheme.secondaryContainer,
+                child: Padding(
+                  padding: const EdgeInsets.all(defaultPadding / 2),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.camera_alt_outlined,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      Expanded(
+                        child: Text(
+                          "虚拟现实",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
